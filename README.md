@@ -7,3 +7,4 @@
 
 ## SW Expert Academy
 + [3124 최소 스패닝 트리](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV_mSnmKUckDFAWb)
++ [1868 파핑파핑 지뢰찾기](https://swexpertacademy.com/main/code/problem/problemSolver.do?contestProbId=AV5LwsHaD1MDFAXc)
