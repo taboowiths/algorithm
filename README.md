@@ -8,6 +8,7 @@
 + [17471 게리맨더링](https://www.acmicpc.net/problem/17471) : 조합 + BFS (or DFS)
 + [4485 녹색 옷 입은 애가 젤다지?](https://www.acmicpc.net/problem/4485) : dijstra
 + [17135 캐슬디펜스](https://www.acmicpc.net/problem/17135)
++ [14502 연구소](https://www.acmicpc.net/problem/14502)
 
 ## SW Expert Academy
 + [3124 최소 스패닝 트리](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV_mSnmKUckDFAWb)
