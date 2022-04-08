@@ -12,3 +12,4 @@
 + [3124 최소 스패닝 트리](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV_mSnmKUckDFAWb)
 + [1868 파핑파핑 지뢰찾기](https://swexpertacademy.com/main/code/problem/problemSolver.do?contestProbId=AV5LwsHaD1MDFAXc)
 + [3282 0/1 Knapsack](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWBJAVpqrzQDFAWr)
++ [1953 탈주범 검거](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PpLlKAQ4DFAUq) : BFS, DFS
