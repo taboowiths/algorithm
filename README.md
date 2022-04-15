@@ -9,6 +9,7 @@
 + [14502 연구소](https://www.acmicpc.net/problem/14502) : 게리맨더링과 비슷한 유형
 + [4485 녹색 옷 입은 애가 젤다지?](https://www.acmicpc.net/problem/4485) : dijstra
 + [17135 캐슬디펜스](https://www.acmicpc.net/problem/17135)
++ [1922 네트워크 연결](https://www.acmicpc.net/problem/1922): kruskal
 
 
 ## SW Expert Academy
