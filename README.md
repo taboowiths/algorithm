@@ -10,6 +10,7 @@
 + [4485 녹색 옷 입은 애가 젤다지?](https://www.acmicpc.net/problem/4485) : dijstra
 + [17135 캐슬디펜스](https://www.acmicpc.net/problem/17135)
 + [1922 네트워크 연결](https://www.acmicpc.net/problem/1922): kruskal
++ [21924 도시건설](https://www.acmicpc.net/problem/21924)
 
 
 ## SW Expert Academy
