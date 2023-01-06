@@ -24,11 +24,10 @@
 + [양궁대회]
 
 
-# Data Structre (자료구조)
-
+<hr>
 <br>
 
 [백준 문제집](https://www.acmicpc.net/workbook/view/6779)
-|          순번          |        추천 문제         |        문제 번호         |        문제 이름         |         난이도          |        풀이 여부         |   
+|          순번          |        문제 유형         |        문제 번호         |        문제 이름         |         난이도          |        풀이 여부         |   
 | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: |
-| 01 |  :heavy_check_mark:  | <a href="https://www.acmicpc.net/problem/2503" target="_blank">2503</a> | <a href="https://www.acmicpc.net/problem/2503" target="_blank">숫자 야구</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/8.svg"/> | 🐯 |
+| 01 |  완전 탐색  | <a href="https://www.acmicpc.net/problem/2503" target="_blank">2503</a> | <a href="https://www.acmicpc.net/problem/2503" target="_blank">숫자 야구</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/8.svg"/> | 🐯 |
