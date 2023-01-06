@@ -31,3 +31,4 @@
 |          순번          |        문제 번호         |        문제 이름         |         난이도          |        풀이 여부         |   
 | :-----: | :-----: | :-----: | :-----: | :-----: |
 | 01 | <a href="https://www.acmicpc.net/problem/2503" target="_blank">2503</a> | <a href="https://www.acmicpc.net/problem/2503" target="_blank">숫자 야구</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/8.svg"/> | 🐯 |
+| 02 | <a href="https://www.acmicpc.net/problem/2798" target="_blank">2798</a> | <a href="https://www.acmicpc.net/problem/2798" target="_blank">블랙잭</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/4.svg"/> | 🐯 |
