@@ -1,6 +1,6 @@
 # 알고리즘 문제풀이
 
-## 백준
+## [백준](https://github.com/taboowiths/Algorithm.wiki.git)
 + [1941 소문난 칠공주](https://www.acmicpc.net/problem/1941)
 + [2178 미로탐색](https://www.acmicpc.net/problem/2178)
 + [2309 일곱 난쟁이](https://www.acmicpc.net/problem/2309) : 조합 
