@@ -23,8 +23,3 @@
 ## Programmers
 + [양궁대회]
 
-<hr>
-<br>
-
-### 완전탐색 (Brute Force)
-
