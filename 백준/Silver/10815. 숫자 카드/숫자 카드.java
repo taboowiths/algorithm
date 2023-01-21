@@ -14,13 +14,12 @@ public class Main {
         int M = Integer.parseInt(br.readLine());
         st = new StringTokenizer(br.readLine(), " ");
         for (int i = 0; i < M; i++) {
-            int len = cards.size();
-            cards.add(Integer.parseInt(st.nextToken()));
-            if (len == cards.size()) sb.append("1");
+            if (cards.contains(Integer.parseInt(st.nextToken()))) sb.append("1");
             else sb.append("0");
             sb.append(" ");
         }
         System.out.println(sb.toString());
+        br.close();
     }
 }
 
