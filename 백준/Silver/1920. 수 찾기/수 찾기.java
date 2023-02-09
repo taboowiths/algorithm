@@ -7,6 +7,7 @@ public class Main {
     static int numbers[];
     public static void main(String[] args) throws Exception{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
         int N = Integer.parseInt(br.readLine());
         numbers = new int[N];
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
@@ -18,8 +19,9 @@ public class Main {
         Arrays.sort(numbers);
         for (int i = 0; i < M; i++) {
             int num = Integer.parseInt(st.nextToken());
-            System.out.println(binarySearch(num, 0, N-1));
+            sb.append(binarySearch(num, 0, N-1)).append("\n");
         }
+        System.out.println(sb.toString());
         br.close();
     }
     public static int binarySearch (int key, int low, int high) {
