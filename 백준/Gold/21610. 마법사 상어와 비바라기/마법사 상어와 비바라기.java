@@ -56,7 +56,7 @@ public class Main {
 
     public static void moveCloud (int cnt) {
         int dir = clouds[cnt][0];
-        int move = clouds[cnt][1];
+        int move = clouds[cnt][1] % N;
 
         while (!queue.isEmpty()) {
             int[] cur = queue.poll();
