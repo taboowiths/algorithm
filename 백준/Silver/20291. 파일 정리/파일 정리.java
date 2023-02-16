@@ -3,6 +3,7 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
         int N = Integer.parseInt(br.readLine());
         HashMap<String, Integer> map = new HashMap<>();
         for (int i = 0; i < N; i++) {
@@ -16,8 +17,9 @@ public class Main {
         List<String> keyList = new ArrayList<>(map.keySet());
         keyList.sort((s1, s2) -> s1.compareTo(s2));
         for (String key : keyList) {
-            System.out.println(key + " " + map.get(key));
+            sb.append(key).append(" ").append(map.get(key)).append("\n");
         }
+        System.out.println(sb.toString());
         br.close();
     }
 }
