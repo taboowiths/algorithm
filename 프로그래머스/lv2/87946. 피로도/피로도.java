@@ -16,11 +16,11 @@ class Solution {
             if (visited[i]) continue;
             visited[i] = true;
             if (dungeons[i][0] <= k) {
-                k-=dungeons[i][1];
+                k-=dungeons[i][0];
                 dfs(cnt+1, k, dungeons);
-                k+=dungeons[i][1];
             }
             visited[i] = false;
+            k+=dungeons[i][0];
         }
     }
 }
