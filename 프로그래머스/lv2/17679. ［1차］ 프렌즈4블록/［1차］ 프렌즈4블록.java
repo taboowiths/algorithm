@@ -23,8 +23,8 @@ class Solution {
     public static void searchBlock (int m, int n, char[][] map) {
         while (true) {
             ArrayList<int[]> list = new ArrayList<>();
-            for (int i = 0; i < m; i++) {
-                for (int j = 0; j < n; j++) {
+            for (int i = 0; i < m-1; i++) {
+                for (int j = 0; j < n-1; j++) {
                     char item = map[i][j];
                     if (item != '0' && check(i, j, m, n) && map[i][j+1] == item && map[i+1][j] == item && map[i+1][j+1] == item) {
                         list.add(new int[] {i, j});
