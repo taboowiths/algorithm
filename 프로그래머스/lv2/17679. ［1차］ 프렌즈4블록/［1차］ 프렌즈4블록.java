@@ -9,6 +9,7 @@ class Solution {
                 map[i][j] = board[i].charAt(j);
             }
         }
+        
         searchBlock(m, n, map);
 
         for (int i = 0; i < m; i++) {
@@ -17,10 +18,6 @@ class Solution {
             }
         }
         return answer;
-    }
-
-    public static boolean check(int i, int j, int m, int n) {
-        return j+1 < n && i+1 < m;
     }
 
     public static void searchBlock (int m, int n, char[][] map) {
@@ -59,4 +56,9 @@ class Solution {
 
         }
     }
+    
+    public static boolean check(int i, int j, int m, int n) {
+        return j+1 < n && i+1 < m;
+    }
+    
 }
