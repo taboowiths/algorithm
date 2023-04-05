@@ -22,21 +22,11 @@ public class Main {
     public static void rollDice () {
         for (int t = 1; t <= 6; t++) {
             int up = dice[0][t];
-            int result = 0;
-            for (int k = 1; k <= 6; k++) {
-                if (k == t || k == findSide(t)) continue;
-                result = Math.max(result, dice[0][k]);
-            }
-
+            int result = getMax(t, 0, 0);
             for (int i = 1; i < N; i++) {
                 for (int j = 1; j <= 6; j++) {
-                    int max = -1;
                     if (dice[i][j] == up) { // 아래로 맞춰야 함
-                        for (int k = 1; k <= 6; k++) {
-                            if (k == j || k == findSide(j)) continue;
-                            max = Math.max(max, dice[i][k]);
-                        }
-                        result += max;
+                        result += getMax(j, -1, i);
                         up = dice[i][findSide(j)];
                         break;
                     }
@@ -44,6 +34,14 @@ public class Main {
             }
             max = Math.max(max, result);
         }
+    }
+
+    public static int getMax (int t, int max, int i) {
+        for (int k = 1; k <= 6; k++) {
+            if (k == t || k == findSide(t)) continue;
+            max = Math.max(max, dice[i][k]);
+        }
+        return max;
     }
 
 
