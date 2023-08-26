@@ -1,6 +1,5 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.StringTokenizer;
 
@@ -20,13 +19,15 @@ public class Main {
             rows[i] = br.readLine();
         }
 
+        StringBuilder sb;
         for (int j = 0; j < C; j++) {
-            String s = "";
+            sb = new StringBuilder();
             for (int i = 1; i < R; i++) {
-                s += rows[i].charAt(j);
+                sb.append(rows[i].charAt(j));
             }
-            cols[j] = s;
+            cols[j] = sb.toString();
         }
+
 
         int cnt = 0;
         int left = 0;
@@ -47,8 +48,9 @@ public class Main {
         HashSet<String> set = new HashSet<>();
         for (int j = 0; j < C; j++) {
             String s = cols[j].substring(mid);
-            set.add(s);
+            if (!set.contains(s)) set.add(s);
+            else return false;
         }
-        return set.size() == C; // 중복 있음 -> false, 중복 없음 -> true
+        return true; // 중복 있음 -> false, 중복 없음 -> true
     }
 }
