@@ -6,29 +6,22 @@ class Solution {
     static ArrayList<String> dictionary;
         public static int[] solution(String msg) {
         dictionary = new ArrayList<>();
-        INDEX = -1;
-        StringBuilder sb;
         String alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         for (int i = 0; i < 26; i++) {
             dictionary.add(String.valueOf(alpha.charAt(i)));
         }
 
-        sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         ArrayList<Integer> list = new ArrayList<>();
+        INDEX = -1;
         int idx = 0;
-
         while (idx < msg.length()) {
             sb.append(msg.charAt(idx));
             if (!isContain(sb.toString())){ // 사전에 없으면
-
                 list.add(INDEX);
                 dictionary.add(sb.toString());
-//                System.out.println("list 추가: " + INDEX);
-//                System.out.println("dictionary 추가: " + sb);
                 sb = new StringBuilder();
-
             } else{ // 사전에 있으면
-//                System.out.println("yes: " + sb);
                 if (idx == msg.length()-1) {
                     list.add(INDEX);
                 }
@@ -39,7 +32,6 @@ class Solution {
         for (int i = 0; i < list.size(); i++) {
             answer[i] = list.get(i);
         }
-
         return answer;
     }
     
