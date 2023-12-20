@@ -6,11 +6,11 @@ class Solution {
     public int solution(String begin, String target, String[] words) {
         N = words.length;
         result = 0;
-        if (begin.compareTo(target) < 0) { // begin < target
-            Arrays.sort(words);
-        } else {
-            Arrays.sort(words, Collections.reverseOrder());
-        }
+        // if (begin.compareTo(target) < 0) { // begin < target
+        //     Arrays.sort(words);
+        // } else {
+        //     Arrays.sort(words, Collections.reverseOrder());
+        // }
         visited = new boolean[N];
         dfs(0, 0, begin, target, words);
 
