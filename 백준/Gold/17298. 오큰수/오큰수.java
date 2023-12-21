@@ -21,9 +21,7 @@ public class Main {
         while (!left.isEmpty()) {
             long cur = left.pop();
             if (left.isEmpty()) last = true;
-
-            if (cur < right.peek()) list.add(right.peek());
-            else {
+            if (cur >= right.peek()) {
                 while (!right.isEmpty()) {
                     long rightCur = right.peek();
                     if (cur < rightCur) break;
@@ -32,13 +30,11 @@ public class Main {
                 if (right.isEmpty()) {
                     right.push(cur);
                     list.add((long) -1);
-                } else {
-                    list.add(right.peek());
+                    continue;
                 }
             }
-
+            if (cur < right.peek()) list.add(right.peek());
             if (!last) if (cur > left.peek()) right.push(cur);
-
         }
         Collections.reverse(list);
         for (long i : list) {
