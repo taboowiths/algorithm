@@ -27,9 +27,7 @@ class Solution {
                 cnt++;
             }
         }
-        
-        // System.out.println(cnt);
-        
+            
         
         return cnt;
     }
