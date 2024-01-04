@@ -10,7 +10,7 @@ class Solution {
             }
         }
         
-        int cnt = 1;
+        int cnt = 2;
         int subMin = balloons[0];
         for (int i = 1; i < minIdx; i++) {
             if (balloons[i] < subMin) {
@@ -19,7 +19,6 @@ class Solution {
             }
         }
         
-        cnt++;
         subMin = balloons[balloons.length - 1];
         for (int i = balloons.length - 2; i >= minIdx; i--) {
             if (balloons[i] < subMin) {
