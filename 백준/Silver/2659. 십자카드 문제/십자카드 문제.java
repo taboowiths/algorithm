@@ -1,30 +1,19 @@
-import java.io.*;
+
 import java.util.*;
+import java.io.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int N = 4;
-        Deque<Integer> deque = new ArrayDeque<>();
+        String num = "";
         for (int i = 0; i < N; i++) {
-            deque.offer(Integer.parseInt(st.nextToken()));
+            num += Integer.parseInt(st.nextToken());
         }
-        int min = Integer.MAX_VALUE;
-
-        for (int i = 0; i < N; i++) {
-            int tmp = 0;
-            deque.addLast(deque.pollFirst());
-            for (int j = 0; j < N; j++) {
-                int num = deque.getLast();
-                if (j == 0) tmp += num;
-                else tmp += (int) (num * Math.pow(10, j));
-                deque.addFirst(deque.pollLast());
-            }
-            min = Math.min(min, tmp);
-        }
-        System.out.println(getNumberOfCircle(min));
-        br.close();
+        int checkNum = Integer.parseInt(num);
+        int minNum = isCircle(checkNum);
+        System.out.println(getNumberOfCircle(minNum));
     }
 
     public static int getNumberOfCircle (int minValue) {
