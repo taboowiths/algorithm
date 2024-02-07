@@ -5,7 +5,7 @@ class Solution {
         int N = 0;
         int min = Integer.MAX_VALUE;
         
-        while (N++ < s.length()) {
+        while (N++ < s.length() / 2 + 1) {
             // N개 단위로 문자열 자르기
             int start = 0;
             int end = start+N;
@@ -13,8 +13,9 @@ class Solution {
             sb = new StringBuilder();
 
             while (end <= s.length()) {
+                // System.out.println(s.length() / 2);
                 String str = s.substring(start, end); // 얘가 있는지
-//                System.out.println("str: " + str);
+               // System.out.println("str: " + str);
                 while (end+N <= s.length()) {
                     int ns = start + N;
                     int ne = end + N;
@@ -33,9 +34,9 @@ class Solution {
                 start += N;
                 end += N;
             }
-           sb.append(s.substring(start));
+            sb.append(s.substring(start));
             min = Math.min(sb.length(), min);
-//            System.out.println("N: " + N + ", sb: " +  sb);
+           // System.out.println("N: " + N + ", sb: " +  sb);
 //            System.out.println(sb.length());
 //            System.out.println();
         }
