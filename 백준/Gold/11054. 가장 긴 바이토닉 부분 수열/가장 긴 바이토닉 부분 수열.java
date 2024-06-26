@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 
@@ -13,20 +14,19 @@ public class Main {
         }
 
         int[] inc = new int[N];
+        int[] dec = new int[N];
+
+        Arrays.fill(inc, 1);
+        Arrays.fill(dec, 1);
+
         for (int k = 0; k < N; k++) {
-            inc[k] = 1;
             for (int i = 0; i < k; i++) {
                 if (arr[i] < arr[k]) inc[k] = Math.max(inc[k], inc[i]+1);
+                if (arr[N-1-i] < arr[N-1-k])  dec[N-1-k] = Math.max(dec[N-1-k], dec[N-1-i]+1);
             }
         }
 
-        int[] dec = new int[N];
-        for (int k = N-1; k >= 0; k--) {
-            dec[k] = 1;
-            for (int i = N-1; i >= k; i--) {
-                if (arr[i] < arr[k]) dec[k] = Math.max(dec[k], dec[i]+1);
-            }
-        }
+
         int result = 0;
         for (int i = 0; i < N; i++) {
             result = Math.max(result, inc[i] + dec[i] - 1);
