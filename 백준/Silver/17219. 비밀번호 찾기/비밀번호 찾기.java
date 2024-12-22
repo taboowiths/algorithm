@@ -1,3 +1,4 @@
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.HashMap;
@@ -19,8 +20,10 @@ public class Main {
             map.putIfAbsent(site, password);
         }
 
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < M; i++) {
-            System.out.println(map.get(br.readLine()));
+            sb.append(map.get(br.readLine())).append("\n");
         }
+        System.out.println(sb.toString());
     }
 }
