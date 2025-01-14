@@ -1,12 +1,8 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.util.*;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception  {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
         int V = Integer.parseInt(st.nextToken());
@@ -29,25 +25,24 @@ public class Main {
             graph[from].add(new int[] {to, weight});
         }
 
+        PriorityQueue<int[]> pq=new PriorityQueue<>((o1,o2)->Integer.compare(o1[1],o2[1]));
         distance[start] = 0;
-        for (int i = 1; i <= V; i++) {
-            int min = Integer.MAX_VALUE; int cur = 0;
-            for (int j = 1; j <= V; j++) {
-                if (!visited[j] && min > distance[j]) {
-                    min = distance[j];
-                    cur = j;
+        pq.offer(new int[] {start, distance[start]});
+
+        while (!pq.isEmpty()) {
+            int[] cur = pq.poll();
+            if (visited[cur[0]]) continue;
+
+            visited[cur[0]] = true;
+
+            for (int[] j : graph[cur[0]]) {
+                if (!visited[j[0]] && distance[j[0]] > distance[cur[0]] + j[1]) {
+                    distance[j[0]] = distance[cur[0]] + j[1];
+                    pq.offer(new int[] {j[0], distance[j[0]]});
                 }
             }
-
-            visited[cur] = true;
-
-            for (int[] j : graph[cur]) {
-                if (!visited[j[0]] && distance[j[0]] > distance[cur] + j[1]) {
-                    distance[j[0]] = distance[cur] + j[1];
-                }
-            }
-
         }
+
         StringBuilder sb = new StringBuilder();
         for (int i = 1; i <= V; i++) {
             if (distance[i] == Integer.MAX_VALUE) sb.append("INF");
