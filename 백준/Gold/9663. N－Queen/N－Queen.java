@@ -1,32 +1,36 @@
-import java.util.*;
+
 import java.io.*;
+import java.util.*;
+
 public class Main {
-    static int N, ans, col[];
+    static int N, cnt;
+    static int[] col;
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         N = Integer.parseInt(br.readLine());
-        col = new int[N+1];
 
-        setQueen(1);
-        System.out.println(ans);
+        col = new int[N+1];
+        cnt = 0;
+        dfs(1);
+        System.out.println(cnt);
     }
 
-    public static void setQueen (int rowNo) {
-        if (!isAvailable(rowNo-1)) return;
-        if (rowNo > N) {
-            ans++;
+    public static void dfs (int cur) {
+        if (!isAvailable(cur-1)) return;
+        if (cur > N) {
+            cnt++;
             return;
         }
-        for (int i = 1; i <= N; i++) {
-            col[rowNo] = i;
-            setQueen(rowNo+1);
-        }
 
+        for (int i = 1; i <= N; i++) {
+            col[cur] = i;
+            dfs(cur+1);
+        }
     }
 
-    public static boolean isAvailable (int rowNo) {
-        for (int i = 1; i < rowNo; i++) {
-            if (col[rowNo] == col[i] || rowNo-i == Math.abs(col[rowNo] - col[i])) return false;
+    public static boolean isAvailable (int cur) {
+        for (int i = 1; i < cur; i++) {
+            if (col[cur] == col[i] || cur - i == Math.abs(col[cur] - col[i])) return false;
         }
         return true;
     }
