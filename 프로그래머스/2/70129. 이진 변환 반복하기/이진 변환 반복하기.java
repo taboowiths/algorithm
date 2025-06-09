@@ -4,19 +4,14 @@ class Solution {
         String curStr = s;
         
         while (!curStr.equals("1")) {
-            answer[1]+=countChar(curStr, '0');
-
+            answer[1]+=curStr.length();
             curStr = curStr.replaceAll("0", "");
+            answer[1]-=curStr.length();
             curStr = Integer.toBinaryString(curStr.length());
-            
             answer[0]++;
         }
         
         return answer;
         
-    }
-    
-    public static int countChar (String str, char ch) {
-        return str.length() - str.replace(String.valueOf(ch), "").length();
     }
 } 
