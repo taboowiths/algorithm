@@ -1,33 +1,34 @@
-import java.io.*;
 import java.util.*;
+import java.io.*;
+
 public class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
-        int[] arr = new int[N];
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-        for (int i = 0; i < N; i++) {
-            arr[i] = Integer.parseInt(st.nextToken());
-        }
-        int X = Integer.parseInt(br.readLine());
-        Arrays.sort(arr);
-        System.out.println(isPair(arr, X));
-    }
 
-    public static int isPair (int[] arr, int X) {
-        int left = 0;
-        int right = arr.length - 1;
+        int[] array = new int[N];
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < N; i++) {
+            array[i] = Integer.parseInt(st.nextToken());
+        }
+        int target = Integer.parseInt(br.readLine());
+
+        Arrays.sort(array);
+
+        int start = 0;
+        int end = array.length - 1;
         int cnt = 0;
 
-        while (left < right) {
-            if (arr[left] + arr[right] == X) {
+        while (start < end) {
+            if (array[start] + array[end] > target) {
+                end--;
+            } else if (array[start] + array[end] < target) {
+                start++;
+            } else if (array[start] + array[end] == target) {
                 cnt++;
-                left++;
-                right--;
+                start++;
             }
-            else if (arr[left] + arr[right] > X) right--;
-            else left++;
         }
-        return cnt;
+        System.out.println(cnt);
     }
 }
