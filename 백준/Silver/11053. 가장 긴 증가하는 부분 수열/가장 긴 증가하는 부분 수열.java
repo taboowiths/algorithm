@@ -1,27 +1,29 @@
-import java.io.*;
 import java.util.*;
+import java.io.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-        int[] arr = new int[N];
+
+        int[] array = new int[N];
+        int[] dp = new int[N];
+
+        StringTokenizer st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
-            arr[i] = Integer.parseInt(st.nextToken());
+            array[i] = Integer.parseInt(st.nextToken());
+            dp[i] = 1;
         }
 
-        int[] dp = new int[N];
-        for (int k = 0; k < N; k++) {
-            dp[k] = 1;
-            for (int i = 0; i < k; i++) {
-                if (arr[i] < arr[k]) dp[k] = Math.max(dp[k], dp[i] + 1);
-            }
-        }
-        
-        int result = -1;
+        int result = 1;
         for (int i = 0; i < N; i++) {
-            result = Math.max(dp[i], result);
+            if (i == 0) continue;
+            for (int j = 0; j < i; j++) {
+                if (array[i] > array[j]) {
+                    dp[i] = Math.max(dp[i], dp[j]+1);
+                }
+            }
+            result = Math.max(result, dp[i]);
         }
         System.out.println(result);
     }
